@@ -16,7 +16,7 @@ N = 10000;
 
 
 X = zeros(m, N);
-vraies_detection = zeros(N, 1);
+vraies_detection = zeros(m, N);
 
 choix_jeu = menu("Choix du jeu de données", "Répartition aléatoire", "Répartition déterministe");
 
@@ -60,9 +60,9 @@ else
     end
 end
 
-save("data", "X", "c00", "c01", "c10", "c11", "sigma", "v", "pi0", "pi1", "vraies_detection");
+save("data", "X", "N", "c00", "c01", "c10", "c11", "sigma", "v", "pi0", "pi1", "vraies_detection", "m");
 
 figure(1)
-plot(X)
+plot(X(1,:))
 grid()
 title("Répartition des données")
